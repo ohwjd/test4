@@ -1,0 +1,93 @@
+name: Campaign automation
+
+# The ONE task-agnostic caller — this repo carries no task logic. It forwards
+# the triggering event to the central automation code named by the `automation:`
+# block in config.yaml (read from THIS repo's base tree, never from a fork) and
+# runs it. Claims, submissions and the stale-lock reaper are all routed there.
+#
+# Trust boundary: pull_request_target runs in THIS repo's context with a write
+# token. Only the base tree and the pinned central code are checked out; the
+# fork's PR is only ever read as data, never executed.
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - tracking/**
+      - sources/**
+  schedule:
+    - cron: '0 * * * *' # fallback cleanup; claims also reap expired locks lazily
+  workflow_dispatch: {} # manual reaper run (e.g. from the campaign console)
+
+# Serialise runs so two events can't be applied concurrently (belt-and-braces
+# alongside the coordinator's optimistic-concurrency retry).
+concurrency:
+  group: campaign-${{ github.repository }}
+  cancel-in-progress: false
+  queue: max
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the campaign repo (base tree only — never the fork head)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      # The central pointer comes from config.yaml on the base ref — a fork PR
+      # cannot redirect where central lives. `path:` also appears under
+      # `sources:`, so the reads are scoped to the `automation:` block.
+      # config.yaml is committed by campaign initialisation; before that
+      # (e.g. a scheduled run on a freshly generated repo) all outputs are
+      # empty and the remaining steps no-op.
+      - name: Read the central automation pointer from config.yaml
+        id: cfg
+        run: |
+          read_automation() {
+            awk -v key="$1" '
+              /^automation:/ { in_block = 1; next }
+              /^[^[:space:]]/ { in_block = 0 }
+              in_block && $1 == key ":" { gsub(/"/, "", $2); print $2; exit }
+            ' config.yaml 2>/dev/null || true
+          }
+          echo "repo=$(read_automation central_repository)" >> "$GITHUB_OUTPUT"
+          echo "ref=$(read_automation ref)" >> "$GITHUB_OUTPUT"
+          echo "path=$(read_automation path)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the central automation code
+        if: steps.cfg.outputs.repo != ''
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: ${{ steps.cfg.outputs.repo }}
+          ref: ${{ steps.cfg.outputs.ref }}
+          path: central
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        if: steps.cfg.outputs.repo != ''
+        with:
+          node-version: 24 # runs the central TypeScript directly (type stripping)
+
+      - name: Ensure xmllint is available (MEI machine-check)
+        if: steps.cfg.outputs.repo != ''
+        run: sudo apt-get install -y libxml2-utils
+
+      - name: Run the central coordinator
+        if: steps.cfg.outputs.repo != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_REPO: ${{ github.repository }}
+          # Stable numeric repo id — the canonical, rename-stable reference.
+          BASE_REPO_ID: ${{ github.repository_id }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          # Numeric account id is the identity written to the tracking tables;
+          # the login rides alongside for human-readable commit messages only.
+          PR_AUTHOR: ${{ github.event.pull_request.user.id }}
+          PR_AUTHOR_LOGIN: ${{ github.event.pull_request.user.login }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          HEAD_REPO_ID: ${{ github.event.pull_request.head.repo.id }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: node central/${{ steps.cfg.outputs.path }}

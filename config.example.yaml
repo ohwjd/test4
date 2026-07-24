@@ -1,0 +1,84 @@
+# =============================================================================
+# Let's Encode! — campaign configuration  (schema v2)
+# =============================================================================
+# Fields below are the implemented set. Lines marked "(reserved)" document
+# where the schema is expected to grow; they are NOT yet read by any Action.
+# -----------------------------------------------------------------------------
+
+# Schema version. Bump only on a breaking change to the format.
+schema_version: 2
+
+# --- Campaign identity -------------------------------------------------------
+# Human-facing metadata. Fields tagged (→ MEI header) are also copied into the
+# MEI <meiHead>.
+campaign:
+  title: "REPLACE ME — campaign title"        # (→ MEI header / title)
+  description: "One or two sentences describing the campaign."
+  instigator: "0"                             # organiser's numeric GitHub account id (login resolved for display)
+  repo_id: 0                                  # this repo's numeric GitHub id — the canonical, rename-proof reference
+  language: "en"                              # BCP-47 code; default UI language
+  license: "CC-BY-4.0"                        # (→ MEI header / availability)
+
+# --- Automation --------------------------------------------------------------
+# Where the campaign's coordination logic lives. The generic caller workflow
+# (.github/workflows/caller.yml) reads this block from the BASE branch on every
+# run, checks out that repository at `ref`, and runs `path`. Upgrading a live
+# campaign is a one-line edit of `ref`.
+automation:
+  central_repository: "lets-encode/instigation" # owner/repo of the central automation code
+  ref: "main"                                   # pin to a commit SHA for production releases
+  path: "scripts/coordinator.ts"                # entry point within that repository
+
+# --- Sources -----------------------------------------------------------------
+# Where the score material comes from. Exactly ONE source is implemented, whose
+# `kind` is `mei-template`.
+#
+# Other source kinds are reserved for later:
+#   - iiif          : reference page images via a IIIF manifest
+#   - image-urls    : reference page images by plain URL or local path
+#   - existing-mei   : import an existing, partial MEI file to be corrected
+#   - omr           : images to be run through OMR before encoding
+sources:
+  - id: src-1
+    kind: mei-template                        # only 'mei-template' is implemented
+    path: sources/score.mei                   # output path of the score file
+    template: templates/score.template.mei    # MEI template for this source
+    header:                                    # per-source MEI header fields
+      composer: ""                            # (→ MEI header / composer)
+      # respStmt, pubStmt, sourceDesc, encodingDesc ... (reserved)
+
+# --- Fragmentation -----------------------------------------------------------
+# How the score is divided into individual encoding tasks. Only the simplest
+# strategy is implemented, `whole`: the entire MEI file is one task with one
+# validation subtask.
+#
+# Reserved strategies (not yet implemented):
+#   by_measure: { per_task: 4 }      # N measures per task
+#   by_section: true                 # one task per <section>
+#   parts:                           # extract individual parts and farm them
+#     extract: false                 #   out as their own task collections
+fragmentation:
+  strategy: whole                             # only 'whole' is implemented
+
+# --- Validation --------------------------------------------------------------
+# IMPORTANT: validation here means human peer review — a SEPARATE step from
+# encoding, ideally done by several different people, and possibly fragmented
+# differently from the encoding tasks. It is NOT the machine check.
+#
+# Machine checks (well-formed XML + MEI schema validity) always run on every
+# submission and are not configured here; they gate a submission but do not
+# count as a "validation".
+#
+# The instigator decides how much and how strictly material is validated:
+validation:
+  required_validations: 1                     # validation cells (validate_status_1…n) per subtask
+  pass_threshold: 1                           # how many 'pass' outcomes complete a subtask
+  # rubric: "..."                             # (reserved) review checklist shown to validators
+  # strictness: normal                        # (reserved) e.g. lenient | normal | strict
+  # separate_fragmentation: false             # (reserved) validate on a different task split
+
+# --- Locking -----------------------------------------------------------------
+# A claimed task or subtask is reserved in tracking/lock.csv. Abandoned claims
+# are released automatically by the stale-lock reaper after this timeout.
+locking:
+  stale_after_minutes: 120
