@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-CMN.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+   <meiHead>
+      <fileDesc>
+         <titleStmt>
+            <title>test4</title>
+            <respStmt>
+               <persName role="composer"></persName>
+            </respStmt>
+         </titleStmt>
+         <pubStmt>
+            <availability>
+               <useRestrict>CC-BY-4.0</useRestrict>
+            </availability>
+         </pubStmt>
+      </fileDesc>
+      <encodingDesc>
+         <appInfo>
+            <application version="1">
+               <name>Let's Encode!</name>
+            </application>
+         </appInfo>
+      </encodingDesc>
+   </meiHead>
+   <music>
+      <facsimile>
+         <surface xml:id="surface-1" n="1" ulx="0" uly="0" lrx="936" lry="1361">
+            <graphic xml:id="graphic-1" target="img/01.jpg" width="936" height="1361"/>
+            <zone xml:id="zone-1-1" type="measure" n="1" ulx="153" uly="241" lrx="365" lry="352"/>
+            <zone xml:id="zone-1-2" type="measure" n="2" ulx="346" uly="238" lrx="515" lry="353"/>
+            <zone xml:id="zone-1-3" type="measure" n="3" ulx="497" uly="242" lrx="661" lry="350"/>
+            <zone xml:id="zone-1-4" type="measure" n="4" ulx="641" uly="231" lrx="775" lry="354"/>
+            <zone xml:id="zone-1-5" type="measure" n="5" ulx="154" uly="342" lrx="343" lry="451"/>
+            <zone xml:id="zone-1-6" type="measure" n="6" ulx="326" uly="342" lrx="483" lry="452"/>
+            <zone xml:id="zone-1-7" type="measure" n="7" ulx="467" uly="348" lrx="621" lry="452"/>
+            <zone xml:id="zone-1-8" type="measure" n="8" ulx="603" uly="345" lrx="773" lry="454"/>
+            <zone xml:id="zone-1-9" type="measure" n="9" ulx="151" uly="441" lrx="349" lry="557"/>
+            <zone xml:id="zone-1-10" type="measure" n="10" ulx="330" uly="442" lrx="499" lry="559"/>
+            <zone xml:id="zone-1-11" type="measure" n="11" ulx="481" uly="449" lrx="643" lry="553"/>
+            <zone xml:id="zone-1-12" type="measure" n="12" ulx="626" uly="444" lrx="774" lry="551"/>
+            <zone xml:id="zone-1-13" type="measure" n="13" ulx="110" uly="610" lrx="218" lry="723"/>
+            <zone xml:id="zone-1-14" type="measure" n="14" ulx="200" uly="615" lrx="364" lry="722"/>
+            <zone xml:id="zone-1-15" type="measure" n="15" ulx="345" uly="613" lrx="513" lry="726"/>
+            <zone xml:id="zone-1-16" type="measure" n="16" ulx="492" uly="618" lrx="662" lry="726"/>
+            <zone xml:id="zone-1-17" type="measure" n="17" ulx="641" uly="604" lrx="820" lry="725"/>
+            <zone xml:id="zone-1-18" type="measure" n="18" ulx="111" uly="709" lrx="347" lry="823"/>
+            <zone xml:id="zone-1-19" type="measure" n="19" ulx="328" uly="715" lrx="493" lry="826"/>
+            <zone xml:id="zone-1-20" type="measure" n="20" ulx="472" uly="717" lrx="678" lry="827"/>
+            <zone xml:id="zone-1-21" type="measure" n="21" ulx="657" uly="711" lrx="817" lry="827"/>
+            <zone xml:id="zone-1-22" type="measure" n="22" ulx="85" uly="810" lrx="370" lry="922"/>
+            <zone xml:id="zone-1-23" type="measure" n="23" ulx="348" uly="816" lrx="509" lry="921"/>
+            <zone xml:id="zone-1-24" type="measure" n="24" ulx="491" uly="819" lrx="713" lry="924"/>
+            <zone xml:id="zone-1-25" type="measure" n="25" ulx="694" uly="812" lrx="820" lry="921"/>
+            <zone xml:id="zone-1-26" type="measure" n="26" ulx="184" uly="1042" lrx="367" lry="1197"/>
+            <zone xml:id="zone-1-27" type="measure" n="27" ulx="346" uly="1042" lrx="447" lry="1195"/>
+            <zone xml:id="zone-1-28" type="measure" n="28" ulx="429" uly="1038" lrx="527" lry="1144"/>
+            <zone xml:id="zone-1-29" type="measure" n="29" ulx="431" uly="1118" lrx="530" lry="1212"/>
+            <zone xml:id="zone-1-30" type="measure" n="30" ulx="508" uly="1032" lrx="714" lry="1138"/>
+            <zone xml:id="zone-1-31" type="measure" n="31" ulx="511" uly="1109" lrx="619" lry="1200"/>
+            <zone xml:id="zone-1-32" type="measure" n="32" ulx="605" uly="1109" lrx="716" lry="1196"/>
+         </surface>
+      </facsimile>
+      <body>
+         <mdiv xml:id="mdiv-1" n="1">
+            <score>
+               <scoreDef>
+                  <staffGrp>
+                     <staffDef n="1" lines="5" clef.shape="G" clef.line="2" meter.count="4" meter.unit="4"/>
+                  </staffGrp>
+               </scoreDef>
+               <section>
+               </section>
+            </score>
+         </mdiv>
+      </body>
+   </music>
+</mei>

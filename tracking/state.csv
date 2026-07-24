@@ -1,1 +1,5 @@
 task_id,subtask_id,status,encoder,encoded_at,validate_status_1
+P0001,,encoding_required,,,
+P0001,S0001,pending,,,
+T0001,,encoding_required,,,
+T0001,S0001,pending,,,

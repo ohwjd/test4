@@ -1,1 +1,5 @@
 task_id,subtask_id,fragment,locator,allowlist,blocklist,depends_on
+P0001,,sources/score.mei,measure-zones,,,
+P0001,S0001,sources/score.mei,measure-zones,,,
+T0001,,sources/score.mei,surface-1,,,P0001
+T0001,S0001,sources/score.mei,surface-1,,,

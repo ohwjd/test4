@@ -1,0 +1,26 @@
+schema_version: 2
+campaign:
+  title: "test4"
+  description: ""
+  instigator: "38179254"
+  repo_id: 1310805161
+  language: "en"
+  license: "CC-BY-4.0"
+automation:
+  central_repository: "lets-encode/instigation"
+  ref: "main"
+  path: "scripts/coordinator.ts"
+sources:
+  - id: "src-1"
+    kind: "facsimile"
+    path: "sources/score.mei"
+    template: "templates/score.template.mei"
+    header:
+      composer: ""
+fragmentation:
+  strategy: "whole"
+validation:
+  required_validations: 1
+  pass_threshold: 1
+locking:
+  stale_after_minutes: 120
