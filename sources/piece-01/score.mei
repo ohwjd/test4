@@ -27,7 +27,10 @@
             <application version="1" xml:id="lets-encode">
                <name xml:id="name-1">Let's Encode!</name>
             </application>
-         </appInfo>
+                     <application xml:id="app-mei-friend">
+               <name>mei-friend</name>
+            </application>
+</appInfo>
       </encodingDesc>
       <manifestationList xml:id="manifestationList-1">
          <manifestation xml:id="manifestation-1">
@@ -70,6 +73,14 @@
             </respStmt>
             <changeDesc>
                <p>Correct measure zones (P0002)</p>
+            </changeDesc>
+         </change>
+         <change n="4" isodate="2026-08-27">
+            <respStmt>
+               <persName>ohwjd</persName>
+            </respStmt>
+            <changeDesc>
+               <p>reformat and add ids</p>
             </changeDesc>
          </change>
 </revisionDesc>
@@ -147,103 +158,109 @@
                </scoreDef>
                <section xml:id="section-1">
                <pb xml:id="pb-2" n="2" facs="#surface-2"/>
-               <measure xml:id="measure-1" n="1" facs="#zone-2-1">
-                  <staff xml:id="staff-1" n="1">
-                     <layer xml:id="layer-1" n="1">
-                        <mRest xml:id="mRest-1"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-2" n="2">
-                     <layer xml:id="layer-2" n="1">
-                        <mRest xml:id="mRest-2"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-3" n="3">
-                     <layer xml:id="layer-3" n="1">
-                        <mRest xml:id="mRest-3"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-4" n="4">
-                     <layer xml:id="layer-4" n="1">
-                        <mRest xml:id="mRest-4"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-5" n="5">
-                     <layer xml:id="layer-5" n="1">
-                        <mRest xml:id="mRest-5"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-6" n="6">
-                     <layer xml:id="layer-6" n="1">
-                        <mRest xml:id="mRest-6"/>
-                     </layer>
-                  </staff>
-               </measure>
-               <measure xml:id="measure-2" n="2" facs="#zone-2-2">
-                  <staff xml:id="staff-7" n="1">
-                     <layer xml:id="layer-7" n="1">
-                        <mRest xml:id="mRest-7"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-8" n="2">
-                     <layer xml:id="layer-8" n="1">
-                        <mRest xml:id="mRest-8"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-9" n="3">
-                     <layer xml:id="layer-9" n="1">
-                        <mRest xml:id="mRest-9"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-10" n="4">
-                     <layer xml:id="layer-10" n="1">
-                        <mRest xml:id="mRest-10"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-11" n="5">
-                     <layer xml:id="layer-11" n="1">
-                        <mRest xml:id="mRest-11"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-12" n="6">
-                     <layer xml:id="layer-12" n="1">
-                        <mRest xml:id="mRest-12"/>
-                     </layer>
-                  </staff>
-               </measure>
-               <measure xml:id="measure-3" n="3" facs="#zone-2-3">
-                  <staff xml:id="staff-13" n="1">
-                     <layer xml:id="layer-13" n="1">
-                        <mRest xml:id="mRest-13"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-14" n="2">
-                     <layer xml:id="layer-14" n="1">
-                        <mRest xml:id="mRest-14"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-15" n="3">
-                     <layer xml:id="layer-15" n="1">
-                        <mRest xml:id="mRest-15"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-16" n="4">
-                     <layer xml:id="layer-16" n="1">
-                        <mRest xml:id="mRest-16"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-17" n="5">
-                     <layer xml:id="layer-17" n="1">
-                        <mRest xml:id="mRest-17"/>
-                     </layer>
-                  </staff>
-                  <staff xml:id="staff-18" n="6">
-                     <layer xml:id="layer-18" n="1">
-                        <mRest xml:id="mRest-18"/>
-                     </layer>
-                  </staff>
-               </measure>
-               <pb xml:id="pb-3" n="3" facs="#surface-3"/>
+                  <measure xml:id="measure-1" facs="#zone-2-1" n="1">
+                     <staff xml:id="staff-1" n="1">
+                        <layer xml:id="layer-1" n="1">
+                           <note xml:id="nwluk6f1" dots="1" dur="4" oct="5" pname="c"/>
+                           <beam xml:id="byc0lx41">
+                              <note xml:id="nl8m867" dur="8" oct="5" pname="c"/>
+                              <note xml:id="n6fk169" dur="16" oct="5" pname="c"/>
+                              <note xml:id="n3p94qd" dur="16" oct="4" pname="b"/>
+                           </beam>
+                           <note xml:id="nbaw4sh1" accid="s" dur="16" oct="4" pname="a"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-2" n="2">
+                        <layer xml:id="layer-2" n="1">
+                           <mRest xml:id="mRest-2"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-3" n="3">
+                        <layer xml:id="layer-3" n="1">
+                           <mRest xml:id="mRest-3"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-4" n="4">
+                        <layer xml:id="layer-4" n="1">
+                           <mRest xml:id="mRest-4"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-5" n="5">
+                        <layer xml:id="layer-5" n="1">
+                           <mRest xml:id="mRest-5"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-6" n="6">
+                        <layer xml:id="layer-6" n="1">
+                           <mRest xml:id="mRest-6"/>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-2" facs="#zone-2-2" n="2">
+                     <staff xml:id="staff-7" n="1">
+                        <layer xml:id="layer-7" n="1">
+                           <mRest xml:id="mRest-7"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-8" n="2">
+                        <layer xml:id="layer-8" n="1">
+                           <mRest xml:id="mRest-8"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-9" n="3">
+                        <layer xml:id="layer-9" n="1">
+                           <mRest xml:id="mRest-9"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-10" n="4">
+                        <layer xml:id="layer-10" n="1">
+                           <mRest xml:id="mRest-10"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-11" n="5">
+                        <layer xml:id="layer-11" n="1">
+                           <mRest xml:id="mRest-11"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-12" n="6">
+                        <layer xml:id="layer-12" n="1">
+                           <mRest xml:id="mRest-12"/>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="measure-3" facs="#zone-2-3" n="3">
+                     <staff xml:id="staff-13" n="1">
+                        <layer xml:id="layer-13" n="1">
+                           <mRest xml:id="mRest-13"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-14" n="2">
+                        <layer xml:id="layer-14" n="1">
+                           <mRest xml:id="mRest-14"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-15" n="3">
+                        <layer xml:id="layer-15" n="1">
+                           <mRest xml:id="mRest-15"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-16" n="4">
+                        <layer xml:id="layer-16" n="1">
+                           <mRest xml:id="mRest-16"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-17" n="5">
+                        <layer xml:id="layer-17" n="1">
+                           <mRest xml:id="mRest-17"/>
+                        </layer>
+                     </staff>
+                     <staff xml:id="staff-18" n="6">
+                        <layer xml:id="layer-18" n="1">
+                           <mRest xml:id="mRest-18"/>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <pb xml:id="pb-3" n="3" facs="#surface-3"/>
                <measure xml:id="measure-4" n="4" facs="#zone-3-1">
                   <staff xml:id="staff-19" n="1">
                      <layer xml:id="layer-19" n="1">
