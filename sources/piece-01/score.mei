@@ -150,7 +150,14 @@
                <measure xml:id="measure-1" n="1" facs="#zone-2-1">
                   <staff xml:id="staff-1" n="1">
                      <layer xml:id="layer-1" n="1">
-                        <mRest xml:id="mRest-1"/>
+                        <note dur="4" pname="c" oct="5" dots="1"/>
+                        <beam>
+                        <note dur="8" pname="c" oct="5"/>
+                        <note dur="16" pname="c" oct="5"/>
+                        <note dur="16" pname="b" oct="4"/>
+                           </beam>
+                        
+                        <note dur="16" pname="a" oct="4" accid="s"/>
                      </layer>
                   </staff>
                   <staff xml:id="staff-2" n="2">
