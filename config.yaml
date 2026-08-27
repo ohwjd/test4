@@ -1,0 +1,55 @@
+schema_version: 3
+campaign:
+  name: "test4"
+  title: "Test4"
+  description: "Testing again"
+  instigator: "38179254"
+  repo_id: 1348233442
+  language: "en"
+  license: "CC-BY-4.0"
+automation:
+  central_repository: "lets-encode/instigation"
+  ref: "main"
+  path: "scripts/coordinator.ts"
+source:
+  kind: "facsimile"
+  images:
+    - "sources/img/01.jpg"
+    - "sources/img/02.jpg"
+    - "sources/img/03.jpg"
+    - "sources/img/04.jpg"
+    - "sources/img/05.jpg"
+    - "sources/img/06.jpg"
+    - "sources/img/07.jpg"
+    - "sources/img/08.jpg"
+    - "sources/img/09.jpg"
+  header:
+    title: "Prelude a L'apres-midi d'un faune"
+    composer: "Debussy"
+    publisher: "Breitkopf & Härtel"
+    date: ""
+  rights_acknowledged: "1"
+pieces:
+  - id: "piece-01"
+    kind: "facsimile"
+    path: "sources/piece-01/score.mei"
+    zones:
+      - { surface: 1, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 2, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 3, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 4, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 5, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 6, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 7, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 8, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+      - { surface: 9, ulx: 0, uly: 0, lrx: 1296, lry: 1728 }
+    header:
+      title: "Prelude a L'apres-midi d'un faune"
+      composer: "Debussy"
+fragmentation:
+  strategy: "by-piece"
+validation:
+  required_validations: 1
+  pass_threshold: 1
+locking:
+  stale_after_minutes: 120
