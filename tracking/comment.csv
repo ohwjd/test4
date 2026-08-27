@@ -1,1 +1,2 @@
 comment_id,task_id,subtask_id,kind,page,measure_start,measure_end,author_id,timestamp,resolved,parent_id,body
+,T0001,,question,,,,,,,,this is a question
