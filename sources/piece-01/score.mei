@@ -117,9 +117,16 @@
       <body xml:id="body-1">
          <mdiv xml:id="mdiv-1" n="1">
             <score xml:id="score-1">
-               <scoreDef xml:id="scoreDef-1">
+               <scoreDef xml:id="scoreDef-1" keysig="4s">
                   <staffGrp xml:id="staffGrp-1">
-                     <staffDef xml:id="staffDef-1" n="1" lines="5" clef.shape="G" clef.line="2" meter.count="4" meter.unit="4"/>
+                     <staffGrp xml:id="staffGrp-2" symbol="bracket">
+                        <staffDef xml:id="staffDef-1" n="1" lines="5" clef.shape="G" clef.line="2" meter.count="9" meter.unit="8"/>
+                        <staffDef xml:id="staffDef-2" n="2" lines="5" clef.shape="G" clef.line="2" meter.count="9" meter.unit="8"/>
+                        <staffDef xml:id="staffDef-3" n="3" lines="5" clef.shape="G" clef.line="2" meter.count="9" meter.unit="8"/>
+                        <staffDef xml:id="staffDef-4" n="4" lines="5" clef.shape="G" clef.line="2" meter.count="9" meter.unit="8"/>
+                        <staffDef xml:id="staffDef-5" n="5" lines="5" clef.shape="G" clef.line="2" meter.count="9" meter.unit="8"/>
+                        <staffDef xml:id="staffDef-6" n="6" lines="5" clef.shape="F" clef.line="4" meter.count="9" meter.unit="8"/>
+                     </staffGrp>
                   </staffGrp>
                </scoreDef>
                <section xml:id="section-1">
