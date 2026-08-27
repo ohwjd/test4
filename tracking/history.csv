@@ -10,3 +10,4 @@ timestamp,task_id,subtask_id,user_id,action,outcome,detail,command,version,input
 2026-08-27T10:03:04.455Z,T0001,,38179254,claim_encoding,accepted,,campaign.openEditor,1,"{""task_id"":""T0001""}"
 2026-08-27T10:08:05.864Z,T0001,,38179254,submit_encoding,accepted,,campaign.submitEncoding,1,"{""task_id"":""T0001""}"
 2026-08-27T10:13:18.155Z,T0001,,38179254,submit_comment,accepted,addition,campaign.submitComment,1,"{""task_id"":""T0001"",""subtask_id"":"""",""kind"":""addition"",""parent_id"":""""}"
+2026-08-27T10:13:35.610Z,T0001,,38179254,submit_comment,accepted,question,campaign.submitComment,1,"{""task_id"":""T0001"",""subtask_id"":"""",""kind"":""question"",""parent_id"":""""}"
