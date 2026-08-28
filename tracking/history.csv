@@ -12,3 +12,4 @@ timestamp,task_id,subtask_id,user_id,action,outcome,detail,command,version,input
 2026-08-27T10:13:18.155Z,T0001,,38179254,submit_comment,accepted,addition,campaign.submitComment,1,"{""task_id"":""T0001"",""subtask_id"":"""",""kind"":""addition"",""parent_id"":""""}"
 2026-08-27T10:13:35.610Z,T0001,,38179254,submit_comment,accepted,question,campaign.submitComment,1,"{""task_id"":""T0001"",""subtask_id"":"""",""kind"":""question"",""parent_id"":""""}"
 2026-08-28T11:40:26.824Z,T0001,S0001,297915765,claim_validation,accepted,,campaign.claimValidation,1,"{""task_id"":""T0001"",""subtask_id"":""S0001""}"
+2026-08-28T11:43:14.193Z,T0001,S0001,297915765,submit_validation,accepted,pass,campaign.submitValidation,2,"{""task_id"":""T0001"",""subtask_id"":""S0001"",""verdict"":""pass""}"
